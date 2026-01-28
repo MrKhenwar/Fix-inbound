@@ -1,83 +1,99 @@
-import React from 'react';
-import { Palette, Code, Rocket, Check } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Palette, Code, Rocket } from 'lucide-react';
 
 interface Service {
   icon: React.ReactNode;
   title: string;
   description: string;
-  features: string[];
+  deliverables: string[];
 }
 
 const Services: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const services: Service[] = [
     {
-      icon: <Palette size={40} className="text-primary" />,
+      icon: <Palette size={32} className="text-primary" />,
       title: 'Design',
-      description:
-        'We create visually stunning and user-friendly designs that leave a lasting impression.',
-      features: [
-        'UI/UX Design',
-        'Landing Page and Website Design',
-        'Brand Identity Design',
-      ],
+      description: 'Beautiful, user-focused interfaces that convert',
+      deliverables: ['UI/UX Design', 'Landing Pages', 'Brand Identity'],
     },
     {
-      icon: <Code size={40} className="text-primary" />,
+      icon: <Code size={32} className="text-primary" />,
       title: 'Development',
-      description:
-        'With expertise in various programming languages and frameworks, we build robust and scalable web and mobile applications.',
-      features: [
-        'Framer Development',
-        'Web Development',
-        'Mobile App Development',
-      ],
+      description: 'Fast, scalable web and mobile applications',
+      deliverables: ['Web Development', 'Mobile Apps', 'Framer Sites'],
     },
     {
-      icon: <Rocket size={40} className="text-primary" />,
-      title: 'MVP Development',
-      description:
-        'Our MVP development services help you launch a minimum viable product that captures early-stage feedback and validates your concept.',
-      features: [
-        'Market Research',
-        'Competitor Analysis',
-        'Web and App Development',
-      ],
+      icon: <Rocket size={32} className="text-primary" />,
+      title: 'MVP Launch',
+      description: 'Ship your product idea in weeks',
+      deliverables: ['Market Research', 'Full Development', 'Launch Support'],
     },
   ];
 
   return (
-    <section className="py-20 px-6 bg-dark-surface">
-      <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our Services
+    <section ref={sectionRef} id="services" className="py-28 px-6 bg-dark-bg">
+      <div className="container mx-auto max-w-6xl">
+        <div
+          className={`text-center mb-20 transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-5">
+            What We Do
           </h2>
-          <p className="text-xl text-gray-500">
-            From concept to creation, we're your trusted digital partner.
+          <p className="text-xl text-gray-500 font-light max-w-2xl mx-auto">
+            End-to-end product development for modern founders
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-dark-card p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className={`bg-dark-surface/50 backdrop-blur-sm border border-gray-800/50 p-8 rounded-2xl hover:border-primary/30 transition-all duration-500 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${200 + index * 150}ms` }}
             >
               <div className="mb-6">{service.icon}</div>
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-2xl font-bold text-white mb-3">
                 {service.title}
               </h3>
-              <p className="text-gray-500 mb-6 leading-relaxed">
+              <p className="text-gray-400 mb-8 leading-relaxed font-light">
                 {service.description}
               </p>
-              <ul className="space-y-3">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <Check size={20} className="text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-300">{feature}</span>
-                  </li>
+              <div className="space-y-2">
+                {service.deliverables.map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary/60"></div>
+                    <span className="text-sm text-gray-500">{item}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>

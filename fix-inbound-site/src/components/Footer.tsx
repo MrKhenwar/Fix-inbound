@@ -17,12 +17,9 @@ const Footer: React.FC = () => {
   };
 
   const quickLinks = [
-    { name: 'Testimonials', id: 'testimonials' },
-    { name: 'Case Studies', id: 'case-studies' },
-    { name: 'Team', id: 'team' },
+    { name: 'Services', id: 'services' },
     { name: 'Pricing', id: 'pricing' },
-    { name: 'Blogs', id: 'blogs' },
-    { name: 'Contact Us', id: 'contact' },
+    { name: 'Contact', id: 'contact' },
   ];
 
   return (
