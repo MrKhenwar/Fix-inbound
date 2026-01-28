@@ -31,7 +31,7 @@ const OrbBackground: React.FC = () => {
     <div className="fixed inset-0 -z-10 overflow-hidden bg-black">
       {/* Main Orb - only visible in header/hero area */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] transition-opacity duration-300"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px] xl:w-[800px] xl:h-[800px] transition-opacity duration-300"
         style={{ opacity: scrollOpacity * 0.4 }}
       >
         <Orb

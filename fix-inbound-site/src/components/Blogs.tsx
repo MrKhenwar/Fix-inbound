@@ -7,10 +7,10 @@ const Blogs: React.FC = () => {
       <div className="container mx-auto max-w-7xl text-center">
         <div className="max-w-2xl mx-auto">
           <BookOpen size={64} className="text-primary mx-auto mb-6" />
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Blogs Coming Soon
           </h2>
-          <p className="text-xl text-gray-500">
+          <p className="text-base sm:text-lg md:text-xl text-gray-500">
             We're working on bringing you insights, tips, and stories from our
             journey. Stay tuned!
           </p>

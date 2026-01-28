@@ -71,7 +71,7 @@ const Services: React.FC = () => {
               />
             </div>
             <h2
-              className={`text-5xl md:text-6xl font-bold text-white transition-all duration-1000 ${
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -79,7 +79,7 @@ const Services: React.FC = () => {
             </h2>
           </div>
           <p
-            className={`text-xl text-gray-500 font-light max-w-2xl mx-auto transition-all duration-1000 delay-200 ${
+            className={`text-base sm:text-lg md:text-xl text-gray-500 font-light max-w-2xl mx-auto transition-all duration-1000 delay-200 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >

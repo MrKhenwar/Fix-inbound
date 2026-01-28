@@ -119,7 +119,7 @@ const CaseStudies: React.FC = () => {
               />
             </div>
             <h2
-              className={`text-4xl md:text-5xl font-bold text-white transition-all duration-700 ${
+              className={`text-3xl sm:text-4xl md:text-5xl font-bold text-white transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
               }`}
             >
@@ -127,7 +127,7 @@ const CaseStudies: React.FC = () => {
             </h2>
           </div>
           <p
-            className={`text-xl text-gray-500 transition-all duration-700 delay-200 ${
+            className={`text-base sm:text-lg md:text-xl text-gray-500 transition-all duration-700 delay-200 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >

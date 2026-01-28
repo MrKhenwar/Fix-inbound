@@ -36,10 +36,10 @@ const HowWeWork: React.FC = () => {
     <section className="py-20 px-6 bg-dark-card">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             How We Work
           </h2>
-          <p className="text-xl text-gray-500">
+          <p className="text-base sm:text-lg md:text-xl text-gray-500">
             At FixInbound, we turn your ideas into reality through our
             streamlined process.
           </p>
