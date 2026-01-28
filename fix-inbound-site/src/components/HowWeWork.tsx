@@ -40,7 +40,7 @@ const HowWeWork: React.FC = () => {
             How We Work
           </h2>
           <p className="text-xl text-gray-500">
-            At Fix Inbound, we turn your ideas into reality through our
+            At FixInbound, we turn your ideas into reality through our
             streamlined process.
           </p>
         </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Palette, Code, Rocket } from 'lucide-react';
+import { Palette, Code, Rocket, Sparkles } from 'lucide-react';
 
 interface Service {
   icon: React.ReactNode;
@@ -57,15 +57,32 @@ const Services: React.FC = () => {
   return (
     <section ref={sectionRef} id="services" className="py-28 px-6 bg-dark-bg">
       <div className="container mx-auto max-w-6xl">
-        <div
-          className={`text-center mb-20 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-5">
-            What We Do
-          </h2>
-          <p className="text-xl text-gray-500 font-light max-w-2xl mx-auto">
+        <div className="text-center mb-20">
+          <div className="flex items-center justify-center gap-4 mb-5">
+            <div
+              className={`transition-all duration-700 ${
+                isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+              }`}
+            >
+              <Sparkles
+                size={52}
+                className="text-primary animate-spin"
+                style={{ animationDuration: '3s' }}
+              />
+            </div>
+            <h2
+              className={`text-5xl md:text-6xl font-bold text-white transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              What We Do
+            </h2>
+          </div>
+          <p
+            className={`text-xl text-gray-500 font-light max-w-2xl mx-auto transition-all duration-1000 delay-200 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             End-to-end product development for modern founders
           </p>
         </div>

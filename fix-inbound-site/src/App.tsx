@@ -5,12 +5,14 @@ import Services from './components/Services';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import FloatingContactButton from './components/FloatingContactButton';
 
 function App() {
   return (
     <div className="relative min-h-screen">
       <OrbBackground />
       <Header />
+      <FloatingContactButton />
       <main>
         <Hero />
         <Services />

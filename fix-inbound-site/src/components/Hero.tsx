@@ -9,16 +9,12 @@ const Hero: React.FC = () => {
   }, []);
 
   const clients = [
-    'Funds Finder',
-    'Feel Good Club',
-    'PlanO',
-    'Carret',
-    'Butterflies',
+    'Zyrax.fit',
     'Product Management Cohort',
-    'Blend Studio',
-    'White Swan',
-    'QuickFunds',
-    'Ice Tribe',
+    'Zylo.fit',
+    'Vidyahive.com',
+    'Hyve',
+    'Consulto',
   ];
 
   return (

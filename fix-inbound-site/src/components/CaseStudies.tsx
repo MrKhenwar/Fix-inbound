@@ -1,5 +1,5 @@
-import React from 'react';
-import { ExternalLink, ArrowRight } from 'lucide-react';
+import React, { useEffect, useState, useRef } from 'react';
+import { ExternalLink, ArrowRight, Briefcase } from 'lucide-react';
 
 interface CaseStudy {
   title: string;
@@ -11,6 +11,30 @@ interface CaseStudy {
 }
 
 const CaseStudies: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const caseStudies: CaseStudy[] = [
     {
       title: 'PlanO - Activity Discovery & Booking Marketplace',
@@ -79,13 +103,41 @@ const CaseStudies: React.FC = () => {
   ];
 
   return (
-    <section id="case-studies" className="py-20 px-6 bg-dark-card">
+    <section ref={sectionRef} id="case-studies" className="py-20 px-6 bg-dark-card">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Case Studies: Transforming Ideas into Impact
-          </h2>
-          <p className="text-xl text-gray-500">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div
+              className={`transition-all duration-700 ${
+                isVisible ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-50 rotate-45'
+              }`}
+            >
+              <Briefcase
+                size={48}
+                className="text-primary animate-bounce"
+                style={{ animationDuration: '2s' }}
+              />
+            </div>
+            <h2
+              className={`text-4xl md:text-5xl font-bold text-white transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              }`}
+            >
+              Case Studies
+            </h2>
+          </div>
+          <p
+            className={`text-xl text-gray-500 transition-all duration-700 delay-200 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
+            Transforming Ideas into Impact
+          </p>
+          <p
+            className={`text-lg text-gray-600 transition-all duration-700 delay-300 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
             Discover the creative process that drives our success.
           </p>
         </div>

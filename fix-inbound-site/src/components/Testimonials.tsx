@@ -1,5 +1,5 @@
-import React from 'react';
-import { Twitter } from 'lucide-react';
+import React, { useEffect, useState, useRef } from 'react';
+import { Twitter, MessageSquareQuote } from 'lucide-react';
 
 interface Testimonial {
   name: string;
@@ -9,6 +9,30 @@ interface Testimonial {
 }
 
 const Testimonials: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const testimonials: Testimonial[] = [
     {
       name: 'Anupama Bhat',
@@ -41,13 +65,33 @@ const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 px-6 bg-dark-surface">
+    <section ref={sectionRef} id="testimonials" className="py-20 px-6 bg-dark-surface">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            LOVED BY THINKERS
-          </h2>
-          <p className="text-xl text-gray-500">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div
+              className={`transition-all duration-700 ${
+                isVisible ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-50 -rotate-45'
+              }`}
+            >
+              <MessageSquareQuote
+                size={48}
+                className="text-primary animate-pulse"
+              />
+            </div>
+            <h2
+              className={`text-4xl md:text-5xl font-bold text-white transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              }`}
+            >
+              LOVED BY THINKERS
+            </h2>
+          </div>
+          <p
+            className={`text-xl text-gray-500 transition-all duration-700 delay-200 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
             Here's what people are saying about us!
           </p>
         </div>

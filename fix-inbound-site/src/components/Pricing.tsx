@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Check, ArrowRight } from 'lucide-react';
+import { Check, ArrowRight, DollarSign } from 'lucide-react';
 
 interface PricingPlan {
   name: string;
@@ -75,15 +75,31 @@ const Pricing: React.FC = () => {
   return (
     <section ref={sectionRef} id="pricing" className="py-28 px-6 bg-dark-bg">
       <div className="container mx-auto max-w-6xl">
-        <div
-          className={`text-center mb-20 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-5">
-            Simple Pricing
-          </h2>
-          <p className="text-xl text-gray-500 font-light">
+        <div className="text-center mb-20">
+          <div className="flex items-center justify-center gap-4 mb-5">
+            <div
+              className={`transition-all duration-700 ${
+                isVisible ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-50 rotate-180'
+              }`}
+            >
+              <DollarSign
+                size={52}
+                className="text-primary animate-pulse"
+              />
+            </div>
+            <h2
+              className={`text-5xl md:text-6xl font-bold text-white transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              Simple Pricing
+            </h2>
+          </div>
+          <p
+            className={`text-xl text-gray-500 font-light transition-all duration-1000 delay-200 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             Choose what works for you
           </p>
         </div>
