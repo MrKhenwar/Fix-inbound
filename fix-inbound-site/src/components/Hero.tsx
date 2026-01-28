@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
             style={{ transitionDelay: '500ms' }}
           >
             <a
-              href="mailto:viditkhenwar@gmail.com"
+              href="https://calendly.com/viditkhenwar/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-white font-semibold text-lg rounded-xl hover:bg-primary-dark transform hover:scale-[1.02] transition-all duration-300 shadow-2xl shadow-primary/20 hover:shadow-primary/30"
