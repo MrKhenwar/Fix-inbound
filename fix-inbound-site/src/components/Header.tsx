@@ -47,7 +47,7 @@ const Header: React.FC = () => {
             className="text-2xl font-bold text-white cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            FixInBound
+            FixInbound
           </div>
 
           {/* Desktop Navigation */}

@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">FixInBound</h3>
+            <h3 className="text-2xl font-bold mb-4">FixInbound</h3>
             <p className="text-gray-500 leading-relaxed">
               Product studio crafting experiences to connect you with your
               audience
@@ -61,11 +61,11 @@ const Footer: React.FC = () => {
             <div className="text-gray-500">
               <p className="mb-2">Contact us at</p>
               <a
-                href="mailto:evan@fixinbound.com"
+                href="mailto:evan@fixInbound.com"
                 className="inline-flex items-center gap-2 text-white hover:text-primary transition-colors duration-200"
               >
                 <Mail size={18} />
-                evan@fixinbound.com
+                evan@fixInbound.com
               </a>
             </div>
           </div>
