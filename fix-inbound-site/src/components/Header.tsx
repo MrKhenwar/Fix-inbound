@@ -38,13 +38,13 @@ const Header: React.FC = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/90 backdrop-blur-md shadow-lg shadow-primary/10 border-b border-gray-800' : 'bg-transparent'
+        isScrolled ? 'bg-ivory/95 backdrop-blur-md shadow-lg shadow-primary/10 border-b border-charcoal/10' : 'bg-ivory/90 backdrop-blur-sm'
       }`}
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div
-            className="text-2xl font-bold text-white cursor-pointer"
+            className="text-2xl font-bold text-charcoal cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             FixInbound
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-300 hover:text-primary transition-colors duration-200 font-medium"
+                className="text-charcoal/70 hover:text-primary transition-colors duration-200 font-medium"
               >
                 {item.name}
               </button>
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-charcoal"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -81,7 +81,7 @@ const Header: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-gray-300 hover:text-primary transition-colors duration-200 font-medium text-left py-2"
+                  className="text-charcoal/70 hover:text-primary transition-colors duration-200 font-medium text-left py-2"
                 >
                   {item.name}
                 </button>

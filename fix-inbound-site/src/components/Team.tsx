@@ -25,10 +25,10 @@ const Team: React.FC = () => {
   ];
 
   return (
-    <section id="team" className="py-20 px-6 bg-dark-surface">
+    <section id="team" className="py-20 px-6 bg-ivory">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal mb-4">
             Meet the Team
           </h2>
         </div>
@@ -37,7 +37,7 @@ const Team: React.FC = () => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-dark-card p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="bg-ivory p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
               <div className="flex flex-col items-center text-center">
                 {/* Avatar Placeholder */}
@@ -45,10 +45,10 @@ const Team: React.FC = () => {
                   <User size={40} className="text-primary" />
                 </div>
 
-                <h3 className="text-lg font-bold text-white mb-1">
+                <h3 className="text-lg font-bold text-charcoal mb-1">
                   {member.name}
                 </h3>
-                <p className="text-sm text-gray-500 mb-3">{member.role}</p>
+                <p className="text-sm text-charcoal/60 mb-3">{member.role}</p>
 
                 {/* Affiliation Badge */}
                 <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-4">

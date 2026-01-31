@@ -103,7 +103,7 @@ const CaseStudies: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="case-studies" className="py-20 px-6 bg-dark-card">
+    <section ref={sectionRef} id="case-studies" className="py-20 px-6 bg-primary">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-4">
@@ -114,12 +114,12 @@ const CaseStudies: React.FC = () => {
             >
               <Briefcase
                 size={48}
-                className="text-primary animate-bounce"
+                className="text-ivory animate-bounce"
                 style={{ animationDuration: '2s' }}
               />
             </div>
             <h2
-              className={`text-3xl sm:text-4xl md:text-5xl font-bold text-white transition-all duration-700 ${
+              className={`text-3xl sm:text-4xl md:text-5xl font-bold text-ivory transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
               }`}
             >
@@ -127,14 +127,14 @@ const CaseStudies: React.FC = () => {
             </h2>
           </div>
           <p
-            className={`text-base sm:text-lg md:text-xl text-gray-500 transition-all duration-700 delay-200 ${
+            className={`text-base sm:text-lg md:text-xl text-ivory/80 transition-all duration-700 delay-200 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
             Transforming Ideas into Impact
           </p>
           <p
-            className={`text-lg text-gray-600 transition-all duration-700 delay-300 ${
+            className={`text-lg text-ivory/70 transition-all duration-700 delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
@@ -146,17 +146,17 @@ const CaseStudies: React.FC = () => {
           {caseStudies.map((study, index) => (
             <div
               key={index}
-              className="bg-dark-surface p-8 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-ivory-dark p-8 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              <h3 className="text-xl font-bold text-white mb-3">
+              <h3 className="text-xl font-bold text-charcoal mb-3">
                 {study.title}
               </h3>
-              <p className="text-gray-500 mb-4 leading-relaxed">
+              <p className="text-charcoal/60 mb-4 leading-relaxed">
                 {study.description}
               </p>
 
               {study.metric && (
-                <div className="inline-block bg-primary/10 text-primary font-semibold px-4 py-2 rounded-lg mb-4">
+                <div className="inline-block bg-charcoal text-ivory font-semibold px-4 py-2 rounded-lg mb-4">
                   {study.metric}
                 </div>
               )}
@@ -165,7 +165,7 @@ const CaseStudies: React.FC = () => {
                 {study.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 bg-dark-card text-gray-300 text-sm rounded-full border border-gray-700"
+                    className="px-3 py-1 bg-ivory text-charcoal/70 text-sm rounded-full border border-charcoal/20"
                   >
                     {tag}
                   </span>
@@ -177,7 +177,7 @@ const CaseStudies: React.FC = () => {
                   href={study.projectLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors duration-200"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-charcoal text-ivory font-medium rounded-lg hover:bg-charcoal/90 transition-colors duration-200"
                 >
                   View Project
                   <ArrowRight size={16} />
@@ -187,7 +187,7 @@ const CaseStudies: React.FC = () => {
                     href={study.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 border-2 border-primary text-primary font-medium rounded-lg hover:bg-primary/5 transition-colors duration-200"
+                    className="inline-flex items-center gap-2 px-4 py-2 border-2 border-charcoal text-charcoal font-medium rounded-lg hover:bg-charcoal/5 transition-colors duration-200"
                   >
                     View Live Link
                     <ExternalLink size={16} />
@@ -203,7 +203,7 @@ const CaseStudies: React.FC = () => {
             href="https://www.creworklabs.com/case-studies"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-primary font-semibold text-lg hover:underline"
+            className="inline-flex items-center gap-2 text-ivory font-semibold text-lg hover:underline"
           >
             View All Case Studies
             <ArrowRight size={20} />

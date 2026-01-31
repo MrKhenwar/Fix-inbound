@@ -37,25 +37,25 @@ const Services: React.FC = () => {
     {
       icon: <Palette size={32} className="text-primary" />,
       title: 'Design',
-      description: 'Beautiful, user-focused interfaces that convert',
+      description: 'Stunning, conversion-optimized interfaces that engage your audience',
       deliverables: ['UI/UX Design', 'Landing Pages', 'Brand Identity'],
     },
     {
       icon: <Code size={32} className="text-primary" />,
       title: 'Development',
-      description: 'Fast, scalable web and mobile applications',
+      description: 'Lightning-fast, scalable applications built with modern tech',
       deliverables: ['Web Development', 'Mobile Apps', 'Framer Sites'],
     },
     {
       icon: <Rocket size={32} className="text-primary" />,
       title: 'MVP Launch',
-      description: 'Ship your product idea in weeks',
+      description: 'Validate your idea and ship to market in record time',
       deliverables: ['Market Research', 'Full Development', 'Launch Support'],
     },
   ];
 
   return (
-    <section ref={sectionRef} id="services" className="py-28 px-6 bg-dark-bg">
+    <section ref={sectionRef} id="services" className="py-28 px-6 bg-ivory">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-20">
           <div className="flex items-center justify-center gap-4 mb-5">
@@ -71,7 +71,7 @@ const Services: React.FC = () => {
               />
             </div>
             <h2
-              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white transition-all duration-1000 ${
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -79,11 +79,11 @@ const Services: React.FC = () => {
             </h2>
           </div>
           <p
-            className={`text-base sm:text-lg md:text-xl text-gray-500 font-light max-w-2xl mx-auto transition-all duration-1000 delay-200 ${
+            className={`text-base sm:text-lg md:text-xl text-charcoal/60 font-light max-w-2xl mx-auto transition-all duration-1000 delay-200 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            End-to-end product development for modern founders
+            Complete digital solutions tailored for ambitious entrepreneurs
           </p>
         </div>
 
@@ -91,23 +91,23 @@ const Services: React.FC = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`bg-dark-surface/50 backdrop-blur-sm border border-gray-800/50 p-8 rounded-2xl hover:border-primary/30 transition-all duration-500 ${
+              className={`bg-ivory-dark/50 backdrop-blur-sm border border-charcoal/10 p-8 rounded-2xl hover:border-primary/30 transition-all duration-500 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${200 + index * 150}ms` }}
             >
               <div className="mb-6">{service.icon}</div>
-              <h3 className="text-2xl font-bold text-white mb-3">
+              <h3 className="text-2xl font-bold text-charcoal mb-3">
                 {service.title}
               </h3>
-              <p className="text-gray-400 mb-8 leading-relaxed font-light">
+              <p className="text-charcoal/60 mb-8 leading-relaxed font-light">
                 {service.description}
               </p>
               <div className="space-y-2">
                 {service.deliverables.map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary/60"></div>
-                    <span className="text-sm text-gray-500">{item}</span>
+                    <span className="text-sm text-charcoal/50">{item}</span>
                   </div>
                 ))}
               </div>

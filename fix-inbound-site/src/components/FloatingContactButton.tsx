@@ -47,7 +47,7 @@ const FloatingContactButton: React.FC = () => {
         aria-label="Contact us"
       >
         {isOpen ? (
-          <X size={28} className="text-white transition-transform duration-300" />
+          <X size={28} className="text-ivory transition-transform duration-300" />
         ) : (
           <img
             src="/favicon-32x32.png"

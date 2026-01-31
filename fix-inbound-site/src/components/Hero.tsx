@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,41 +7,32 @@ const Hero: React.FC = () => {
     setIsVisible(true);
   }, []);
 
-  const clients = [
-    'Zyrax.fit',
-    'Product Management Cohort',
-    'Zylo.fit',
-    'Vidyahive.com',
-    'Hyve',
-    'Consulto',
-  ];
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6">
+    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 bg-ivory">
       <div className="container mx-auto text-center">
         <div className="max-w-4xl mx-auto space-y-10">
           {/* Main Heading */}
           <h1
-            className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight transition-all duration-1000 ${
+            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-charcoal leading-tight transition-all duration-1000 max-w-3xl mx-auto ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{ transitionDelay: '100ms' }}
           >
-            Build Products
+            Your buisness loses clients before they book.
             <br />
-            <span className="text-primary">That Convert</span>
+            We fix that.
           </h1>
 
           {/* Supporting Text */}
           <p
-            className={`text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-2xl mx-auto font-light transition-all duration-1000 ${
+            className={`text-lg sm:text-xl md:text-2xl text-charcoal/70 max-w-2xl mx-auto font-light leading-relaxed transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{ transitionDelay: '300ms' }}
           >
-            Launch your website or MVP in days, not months.
+            Calls go to voicemail. Messages sit unanswered. Your website doesn't convert.
             <br className="hidden md:block" />
-            Built for founders who need results fast.
+            We rebuild your inbound system so clients actually book.
           </p>
 
           {/* CTA Button */}
@@ -56,58 +46,15 @@ const Hero: React.FC = () => {
               href="https://calendly.com/viditkhenwar/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-white font-semibold text-lg rounded-xl hover:bg-primary-dark transform hover:scale-[1.02] transition-all duration-300 shadow-2xl shadow-primary/20 hover:shadow-primary/30"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-charcoal text-ivory font-medium text-base hover:bg-charcoal/90 transition-all duration-200 border border-charcoal"
             >
-              Start Your Project
-              <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
+              Get Free Inbound Audit
             </a>
-            <p className="text-sm text-gray-500 mt-4">Free 30-min discovery call • No commitment</p>
-          </div>
-
-          {/* Client Marquee */}
-          <div
-            className={`mt-20 transition-all duration-1000 ${
-              isVisible ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{ transitionDelay: '700ms' }}
-          >
-            <p className="text-xs text-gray-600 font-medium mb-8 uppercase tracking-widest">
-              Trusted by 10+ brands
-            </p>
-            <div className="relative overflow-hidden py-4">
-              <div className="flex animate-marquee whitespace-nowrap">
-                {[...clients, ...clients].map((client, index) => (
-                  <span
-                    key={index}
-                    className="mx-10 text-gray-600 font-medium text-base hover:text-gray-400 transition-colors"
-                  >
-                    {client}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <p className="text-sm text-charcoal/50 mt-6">No pitch. No pressure. Just a clear diagnosis of what's broken.</p>
           </div>
         </div>
       </div>
 
-      <style>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .animate-marquee {
-          animation: marquee 35s linear infinite;
-        }
-
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 };

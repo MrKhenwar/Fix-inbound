@@ -44,27 +44,27 @@ const Pricing: React.FC = () => {
       price: '$300',
       priceLabel: 'Fixed price',
       features: [
-        'Custom design',
-        'Fully responsive',
-        'SEO optimized',
-        '4-5 day delivery',
-        'Unlimited revisions',
+        'Custom, conversion-focused design',
+        'Fully responsive across all devices',
+        'SEO optimized for search rankings',
+        '4-5 day lightning-fast delivery',
+        'Unlimited revisions until perfect',
       ],
       ctaText: 'Get Started',
       ctaLink: 'https://calendly.com/creworklabs/30mins',
     },
     {
       name: 'MVP',
-      subtitle: 'Ship your product idea',
+      subtitle: 'Validate and launch your product',
       price: '$1000',
       priceLabel: 'Starting from',
       features: [
-        'Market research',
-        'Brand identity',
-        'UI/UX design',
-        'Full development',
-        'Launch support',
-        'Project management',
+        'In-depth market research & validation',
+        'Complete brand identity system',
+        'User-centered UI/UX design',
+        'Full-stack development',
+        'End-to-end launch support',
+        'Dedicated project management',
       ],
       ctaText: 'Start Building',
       ctaLink: 'https://calendly.com/creworklabs/30mins',
@@ -73,7 +73,7 @@ const Pricing: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="pricing" className="py-28 px-6 bg-dark-bg">
+    <section ref={sectionRef} id="pricing" className="py-28 px-6 bg-ivory">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-20">
           <div className="flex items-center justify-center gap-4 mb-5">
@@ -88,7 +88,7 @@ const Pricing: React.FC = () => {
               />
             </div>
             <h2
-              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white transition-all duration-1000 ${
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -96,11 +96,11 @@ const Pricing: React.FC = () => {
             </h2>
           </div>
           <p
-            className={`text-base sm:text-lg md:text-xl text-gray-500 font-light transition-all duration-1000 delay-200 ${
+            className={`text-base sm:text-lg md:text-xl text-charcoal/60 font-light transition-all duration-1000 delay-200 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            Choose what works for you
+            Transparent pricing designed to fit your goals
           </p>
         </div>
 
@@ -108,38 +108,38 @@ const Pricing: React.FC = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-dark-surface/50 backdrop-blur-sm border p-10 rounded-3xl transition-all duration-500 hover:scale-[1.02] ${
+              className={`relative bg-ivory-dark/50 backdrop-blur-sm border p-10 rounded-3xl transition-all duration-500 hover:scale-[1.02] ${
                 plan.highlighted
                   ? 'border-primary/50 shadow-xl shadow-primary/10'
-                  : 'border-gray-800/50 hover:border-primary/30'
+                  : 'border-charcoal/10 hover:border-primary/30'
               } ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${200 + index * 150}ms` }}
             >
               {plan.highlighted && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-white text-sm font-semibold rounded-full">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-ivory text-sm font-semibold rounded-full">
                   Popular
                 </div>
               )}
 
               <div className="mb-8">
-                <h3 className="text-3xl font-bold text-white mb-2">
+                <h3 className="text-3xl font-bold text-charcoal mb-2">
                   {plan.name}
                 </h3>
-                <p className="text-gray-500 font-light">
+                <p className="text-charcoal/60 font-light">
                   {plan.subtitle}
                 </p>
               </div>
 
               <div className="mb-8">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-white">
+                  <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-charcoal">
                     {plan.price}
                   </span>
                 </div>
                 {plan.priceLabel && (
-                  <p className="text-sm text-gray-500 mt-2">{plan.priceLabel}</p>
+                  <p className="text-sm text-charcoal/50 mt-2">{plan.priceLabel}</p>
                 )}
               </div>
 
@@ -150,7 +150,7 @@ const Pricing: React.FC = () => {
                       size={20}
                       className="text-primary flex-shrink-0"
                     />
-                    <span className="text-gray-300 font-light">{feature}</span>
+                    <span className="text-charcoal/70 font-light">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -161,8 +161,8 @@ const Pricing: React.FC = () => {
                 rel="noopener noreferrer"
                 className={`flex items-center justify-center gap-2 w-full px-6 py-4 font-semibold rounded-xl transition-all duration-300 ${
                   plan.highlighted
-                    ? 'bg-primary text-white hover:bg-primary-dark shadow-lg hover:shadow-xl'
-                    : 'bg-dark-card text-white hover:bg-primary border border-gray-800'
+                    ? 'bg-primary text-ivory hover:bg-primary-dark shadow-lg hover:shadow-xl'
+                    : 'bg-dark-card text-charcoal hover:bg-primary hover:text-ivory border border-charcoal/20'
                 }`}
               >
                 {plan.ctaText}
@@ -178,7 +178,7 @@ const Pricing: React.FC = () => {
           }`}
           style={{ transitionDelay: '600ms' }}
         >
-          <p className="text-gray-600 text-sm">
+          <p className="text-charcoal/40 text-sm">
             All projects include unlimited revisions and dedicated support
           </p>
         </div>

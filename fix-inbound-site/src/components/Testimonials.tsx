@@ -65,7 +65,7 @@ const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="testimonials" className="py-20 px-6 bg-dark-surface">
+    <section ref={sectionRef} id="testimonials" className="py-20 px-6 bg-ivory">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-4">
@@ -80,7 +80,7 @@ const Testimonials: React.FC = () => {
               />
             </div>
             <h2
-              className={`text-3xl sm:text-4xl md:text-5xl font-bold text-white transition-all duration-700 ${
+              className={`text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
               }`}
             >
@@ -88,7 +88,7 @@ const Testimonials: React.FC = () => {
             </h2>
           </div>
           <p
-            className={`text-base sm:text-lg md:text-xl text-gray-500 transition-all duration-700 delay-200 ${
+            className={`text-base sm:text-lg md:text-xl text-charcoal/60 transition-all duration-700 delay-200 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
@@ -100,18 +100,18 @@ const Testimonials: React.FC = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-dark-card p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-ivory p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <h3 className="font-bold text-lg text-white">
+                  <h3 className="font-bold text-lg text-charcoal">
                     {testimonial.name}
                   </h3>
-                  <p className="text-gray-500 text-sm">{testimonial.role}</p>
+                  <p className="text-charcoal/60 text-sm">{testimonial.role}</p>
                 </div>
                 <Twitter className="text-primary" size={24} />
               </div>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-charcoal/70 leading-relaxed">
                 "{testimonial.quote}"
               </p>
             </div>

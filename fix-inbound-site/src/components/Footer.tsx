@@ -23,15 +23,14 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white py-16 px-6">
+    <footer className="bg-charcoal text-ivory py-16 px-6">
       <div className="container mx-auto max-w-7xl">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-bold mb-4">FixInbound</h3>
-            <p className="text-gray-500 leading-relaxed">
-              Product studio crafting experiences to connect you with your
-              audience
+            <p className="text-ivory/60 leading-relaxed">
+              A digital product studio dedicated to transforming ideas into experiences that connect, engage, and convert.
             </p>
           </div>
 
@@ -43,7 +42,7 @@ const Footer: React.FC = () => {
                 <li key={index}>
                   <button
                     onClick={() => scrollToSection(link.id)}
-                    className="text-gray-500 hover:text-white transition-colors duration-200"
+                    className="text-ivory/60 hover:text-ivory transition-colors duration-200"
                   >
                     {link.name}
                   </button>
@@ -56,13 +55,13 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Connect With Us</h4>
             <div className="flex gap-4 mb-6">
-             
+
             </div>
-            <div className="text-gray-500">
+            <div className="text-ivory/60">
               <p className="mb-2">Contact us at</p>
               <a
                 href="mailto:evan@fixInbound.com"
-                className="inline-flex items-center gap-2 text-white hover:text-primary transition-colors duration-200"
+                className="inline-flex items-center gap-2 text-ivory hover:text-primary transition-colors duration-200"
               >
                 <Mail size={18} />
                 evan@fixInbound.com
@@ -72,7 +71,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-500">
+        <div className="border-t border-ivory/20 pt-8 text-center text-ivory/60">
           <p>
             Copyright &copy; 2025 FixInbound. All Rights Reserved.
           </p>
