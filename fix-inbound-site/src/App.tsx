@@ -1,9 +1,14 @@
 import OrbBackground from './components/OrbBackground';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Services from './components/Services';
-import Pricing from './components/Pricing';
+import RealityCheck from './components/RealityCheck';
+import CostOfInaction from './components/CostOfInaction';
+import Approach from './components/Approach';
+import WhatYouHandle from './components/WhatYouHandle';
+import WhyThisWorks from './components/WhyThisWorks';
 import Contact from './components/Contact';
+import WhoItsFor from './components/WhoItsFor';
+import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import FloatingContactButton from './components/FloatingContactButton';
 
@@ -15,9 +20,14 @@ function App() {
       <FloatingContactButton />
       <main>
         <Hero />
-        <Services />
-        <Pricing />
+        <RealityCheck />
+        <CostOfInaction />
+        <Approach />
+        <WhatYouHandle />
+        <WhyThisWorks />
         <Contact />
+        <WhoItsFor />
+        <FinalCTA />
       </main>
       <Footer />
     </div>

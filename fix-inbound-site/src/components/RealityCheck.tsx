@@ -26,47 +26,50 @@ const RealityCheck: React.FC = () => {
   }, []);
 
   const problems = [
-    'Patient calls during lunch or after hours—lost forever',
-    'Contact forms sit unread for 6+ hours',
-    'Staff answer the same questions 40 times a week',
-    'Your Google listing shows "usually responds in a few days"',
-    'Website visitors leave because booking feels complicated',
-    'No one knows which lead source actually drives appointments'
+    {
+      title: 'Missed Calls',
+      description: 'Peak hours. Busy desks. Patients move on.'
+    },
+    {
+      title: 'Delayed Responses',
+      description: 'Messages answered late — or not at all.'
+    },
+    {
+      title: 'Low Conversion',
+      description: 'Website traffic that doesn\'t turn into bookings.'
+    }
   ];
 
   return (
     <section ref={sectionRef} className="py-32 px-6 bg-ivory border-t border-charcoal/10">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-6xl">
         <div
           className={`transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal text-charcoal mb-16 text-center">
-            This sounds familiar
-          </h2>
-
-          <div className="space-y-6">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {problems.map((problem, index) => (
               <div
                 key={index}
-                className={`border-l-2 border-charcoal/20 pl-6 py-3 transition-all duration-700 ${
-                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                className={`border border-charcoal/20 p-8 transition-all duration-1000 ease-out hover:shadow-xl hover:border-charcoal/40 hover:-translate-y-2 ${
+                  isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'
                 }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
+                style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <p className="text-lg text-charcoal/80 font-light leading-relaxed">
-                  {problem}
+                <h3 className={`text-xl font-semibold text-charcoal mb-3 transition-all duration-700 ${
+                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                }`} style={{ transitionDelay: `${index * 200 + 100}ms` }}>
+                  {problem.title}
+                </h3>
+                <p className={`text-base text-charcoal/70 font-light leading-relaxed transition-all duration-700 ${
+                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                }`} style={{ transitionDelay: `${index * 200 + 200}ms` }}>
+                  {problem.description}
                 </p>
               </div>
             ))}
           </div>
-
-          <p className="text-xl text-charcoal/60 mt-16 text-center font-light leading-relaxed">
-            These aren't marketing problems.
-            <br />
-            They're operational failures happening in real time.
-          </p>
         </div>
       </div>
     </section>

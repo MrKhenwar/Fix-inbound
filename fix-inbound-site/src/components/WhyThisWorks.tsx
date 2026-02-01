@@ -33,33 +33,41 @@ const WhyThisWorks: React.FC = () => {
       }`}
     >
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-light text-charcoal mb-20">
-          Why this works for clinics
-        </h2>
-
-        <div className="space-y-12">
-          <div className="border-l-2 border-charcoal pl-8">
-            <p className="text-xl md:text-2xl font-light text-charcoal leading-relaxed">
-              Built specifically for how patients actually book appointments
-            </p>
-          </div>
-
-          <div className="border-l-2 border-charcoal pl-8">
-            <p className="text-xl md:text-2xl font-light text-charcoal leading-relaxed">
-              Handles the operational reality of front desk workload
-            </p>
-          </div>
-
-          <div className="border-l-2 border-charcoal pl-8">
-            <p className="text-xl md:text-2xl font-light text-charcoal leading-relaxed">
-              Designed around insurance, scheduling, and compliance constraints
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-20">
-          <p className="text-2xl md:text-3xl font-normal text-charcoal">
-            This isn't adapted from SaaS or e-commerce. It's purpose-built.
+        <div className="space-y-8">
+          <p className={`text-xl md:text-2xl font-light text-charcoal leading-relaxed transition-all duration-1000 ease-out ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+          }`} style={{ transitionDelay: '100ms' }}>
+            Everything we design is built around how clinics actually operate.
+          </p>
+          <p className={`text-xl md:text-2xl font-light text-charcoal leading-relaxed transition-all duration-1000 ease-out ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+          }`} style={{ transitionDelay: '200ms' }}>
+            Not ideal workflows.
+          </p>
+          <p className={`text-xl md:text-2xl font-light text-charcoal leading-relaxed transition-all duration-1000 ease-out ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+          }`} style={{ transitionDelay: '300ms' }}>
+            Not perfect staffing.
+          </p>
+          <p className={`text-xl md:text-2xl font-light text-charcoal leading-relaxed transition-all duration-1000 ease-out ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+          }`} style={{ transitionDelay: '400ms' }}>
+            Real schedules. Real interruptions. Real patients.
+          </p>
+          <p className={`text-xl md:text-2xl font-light text-charcoal leading-relaxed mt-12 transition-all duration-1000 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`} style={{ transitionDelay: '550ms' }}>
+            Systems are designed to support your front desk — not replace it.
+          </p>
+          <p className={`text-xl md:text-2xl font-light text-charcoal leading-relaxed transition-all duration-1000 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`} style={{ transitionDelay: '700ms' }}>
+            To stay consistent without adding pressure.
+          </p>
+          <p className={`text-xl md:text-2xl font-light text-charcoal leading-relaxed transition-all duration-1000 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`} style={{ transitionDelay: '850ms' }}>
+            And to work quietly in the background once set up.
           </p>
         </div>
       </div>

@@ -9,13 +9,13 @@ const FloatingContactButton: React.FC = () => {
       icon: <Mail size={20} />,
       label: 'Email Us',
       action: () => window.location.href = 'mailto:viditkhenwar@gmail.com',
-      color: 'bg-blue-600 hover:bg-blue-700'
+      color: 'bg-black hover:bg-gray-800'
     },
     {
       icon: <Phone size={20} />,
       label: 'Call Us',
-      action: () => window.location.href = 'tel:+919354127747',
-      color: 'bg-green-600 hover:bg-green-700'
+      action: () => window.location.href = 'tel:+918810107282',
+      color: 'bg-black hover:bg-gray-800'
     }
   ];
 

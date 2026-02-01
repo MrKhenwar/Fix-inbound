@@ -52,15 +52,19 @@ const Contact: React.FC = () => {
     <section ref={sectionRef} id="contact" className="py-28 px-6 bg-ivory">
       <div className="container mx-auto max-w-4xl">
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          className={`text-center mb-16 transition-all duration-1200 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal mb-5">
-            Let's Talk
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal mb-5 transition-all duration-1200 ease-out ${
+            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+          }`} style={{ transitionDelay: '100ms' }}>
+            A Clear Diagnosis of Your Current Inbound Setup
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-charcoal/60 font-light max-w-2xl mx-auto">
-            Have a project in mind? We'd love to hear about it.
+          <p className={`text-base sm:text-lg md:text-xl text-charcoal/60 font-light max-w-2xl mx-auto transition-all duration-1000 ease-out ${
+            isVisible ? 'opacity-100' : 'opacity-0'
+          }`} style={{ transitionDelay: '300ms' }}>
+            This call is used to understand how your clinic handles inbound today — and where it breaks under real conditions.
           </p>
         </div>
 
@@ -83,28 +87,60 @@ const Contact: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {/* CTA Section */}
             <div
-              className={`flex flex-col justify-center transition-all duration-1000 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              className={`flex flex-col justify-center transition-all duration-1200 ease-out ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
               }`}
-              style={{ transitionDelay: '200ms' }}
+              style={{ transitionDelay: '400ms' }}
             >
-              <h3 className="text-3xl font-bold text-charcoal mb-4">
-                Ready to Transform Your Vision?
+              <h3 className={`text-2xl font-light text-charcoal mb-6 transition-all duration-1000 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              }`} style={{ transitionDelay: '500ms' }}>
+                During the audit, we look at:
               </h3>
-              <p className="text-charcoal/60 text-lg mb-8 font-light leading-relaxed">
-                Skip the form and book a discovery call. We'll dive into your goals, explore solutions, and provide a tailored roadmap to success.
+              <ul className="space-y-4 mb-8">
+                <li className={`text-charcoal/70 text-lg font-light leading-relaxed flex items-start gap-3 transition-all duration-1000 ease-out ${
+                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'
+                }`} style={{ transitionDelay: '600ms' }}>
+                  <span className="text-charcoal mt-1">•</span>
+                  <span>How calls and messages are currently handled</span>
+                </li>
+                <li className={`text-charcoal/70 text-lg font-light leading-relaxed flex items-start gap-3 transition-all duration-1000 ease-out ${
+                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'
+                }`} style={{ transitionDelay: '700ms' }}>
+                  <span className="text-charcoal mt-1">•</span>
+                  <span>Where patient interest drops before booking</span>
+                </li>
+                <li className={`text-charcoal/70 text-lg font-light leading-relaxed flex items-start gap-3 transition-all duration-1000 ease-out ${
+                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'
+                }`} style={{ transitionDelay: '800ms' }}>
+                  <span className="text-charcoal mt-1">•</span>
+                  <span>How your website and visibility support (or block) appointments</span>
+                </li>
+              </ul>
+              <p className={`text-charcoal/60 text-base mb-8 font-light leading-relaxed transition-all duration-1000 ease-out ${
+                isVisible ? 'opacity-100' : 'opacity-0'
+              }`} style={{ transitionDelay: '900ms' }}>
+                There are no promises made on this call.<br/>
+                No pitches. No pressure.<br/><br/>
+                If we see clear gaps, we'll explain them.<br/>
+                If it makes sense to fix them together, we'll tell you how.
               </p>
               <a
-                href="https://calendly.com/creworklabs/30mins"
+                href="https://calendly.com/viditkhenwar/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-ivory font-semibold rounded-xl hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl w-fit"
+                className={`inline-flex items-center gap-2 px-8 py-4 bg-charcoal text-ivory font-medium hover:bg-charcoal/90 hover:scale-105 transition-all duration-300 w-fit border border-charcoal shadow-lg hover:shadow-2xl ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                }`}
+                style={{ transitionDelay: '1000ms' }}
               >
-                Book a Call
+                Request a Free Inbound Audit
                 <ArrowRight size={20} />
               </a>
-              <p className="text-sm text-charcoal/40 mt-4">
-                30 min • Free • No commitment
+              <p className={`text-sm text-charcoal/40 mt-4 transition-all duration-1000 ${
+                isVisible ? 'opacity-100' : 'opacity-0'
+              }`} style={{ transitionDelay: '1100ms' }}>
+                15–20 minute call
               </p>
             </div>
 
